@@ -21,23 +21,27 @@ public class MainActivity extends BaseActivity {
             case R.id.fragment_main:
                 FragmentManager fm = getSupportFragmentManager();
                 BaseFragment fragment = (BaseFragment) fm.findFragmentById(fragmentId);
-                fragment.setFunctions(new Functions().addFunction(new Functions.FunctionNoParamAndResult(MainFragment.FUNCTION_NO_PARAM_NO_RESULT) {
+                fragment.setFunctions(new Functions()
+                        .addFunction(new Functions.FunctionNoParamAndResult(MainFragment.FUNCTION_NO_PARAM_NO_RESULT) {
                     @Override
                     public void function() {
                         Toast.makeText(MainActivity.this, "成功调用无参无返回值方法", Toast.LENGTH_LONG).show();
                     }
-                }).addFunction(new Functions.FunctionWithResult<String>(MainFragment.FUNCTION_NO_PARAM_HAS_RESULT) {
+                })
+                        .addFunction(new Functions.FunctionWithResult<String>(MainFragment.FUNCTION_NO_PARAM_HAS_RESULT) {
                     @Override
                     public String function() {
                         Toast.makeText(MainActivity.this, "成功调用无参有返回值方法", Toast.LENGTH_LONG).show();
                         return "恭喜你，调我成功！";
                     }
-                }).addFunction(new Functions.FunctionWithParam<Integer>(MainFragment.FUNCTION_HAS_PARAM_NO_RESULT) {
+                })
+                        .addFunction(new Functions.FunctionWithParam<Integer>(MainFragment.FUNCTION_HAS_PARAM_NO_RESULT) {
                     @Override
                     public void function(Integer o) {
                         Toast.makeText(MainActivity.this, "成功调用有参无返回值方法 参数值=" + o, Toast.LENGTH_LONG).show();
                     }
-                }).addFunction(new Functions.FunctionWithParamAndResult<List, Integer>(MainFragment.EVENT_HAS_PARAM_HAS_RESULT) {
+                })
+                        .addFunction(new Functions.FunctionWithParamAndResult<List, Integer>(MainFragment.EVENT_HAS_PARAM_HAS_RESULT) {
 
                     @Override
                     public List function(Integer data) {
@@ -48,20 +52,22 @@ public class MainActivity extends BaseActivity {
                         result.add("3");
                         return result;
                     }
-                }).addFunction(new Functions.FunctionWithParam<Functions.FunctionParams>(MainFragment.FUNCTION_HAS_MORE_PARAM) {
+                })
+                        .addFunction(new Functions.FunctionWithParam<Functions.FunctionParams>(MainFragment.FUNCTION_HAS_MORE_PARAM) {
 
                     @Override
                     public void function(Functions.FunctionParams functionParams) {
                         if (functionParams != null) {
 
-                            Toast.makeText(MainActivity.this, "成功调用多个参数的方法 参数值=" + functionParams.getString()+" 参数1="+functionParams.getString()+" 参数2="+functionParams.getInt(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, "成功调用多个参数的方法 参数值=" + functionParams.getString() + " 参数1=" + functionParams.getString() + " 参数2=" + functionParams.getInt(), Toast.LENGTH_LONG).show();
                         }
                     }
-                }).addFunction(new Functions.FunctionWithParam<Bundle>(MainFragment.FUNCTION_HAS_MORE_PARAM_Bundle) {
+                })
+                        .addFunction(new Functions.FunctionWithParam<Bundle>(MainFragment.FUNCTION_HAS_MORE_PARAM_Bundle) {
 
                     @Override
                     public void function(Bundle bundle) {
-                        if(bundle != null){
+                        if (bundle != null) {
                             Toast.makeText(MainActivity.this, "成功调用多个参数的方法 参数值=" + bundle.getString("p") + " 参数1=" + bundle.getString("p1") + " 参数2=" + bundle.getInt("p2"), Toast.LENGTH_LONG).show();
 
                         }

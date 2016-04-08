@@ -14,9 +14,6 @@ import com.qyk.function.Functions;
 
 import java.util.List;
 
-/**
- * Created by niuxiaowei on 2016/1/25.
- */
 public class MainFragment extends BaseFragment {
 
     public static MainFragment newInstance() {
