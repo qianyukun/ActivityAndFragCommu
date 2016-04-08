@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.qyk.activity.R;
+import com.qyk.activityandfragcommu.R;
 import com.qyk.function.FunctionException;
 import com.qyk.function.Functions;
 

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.widget.Toast;
 
+import com.qyk.activityandfragcommu.R;
 import com.qyk.fragment.BaseFragment;
 import com.qyk.fragment.MainFragment;
 import com.qyk.function.Functions;
